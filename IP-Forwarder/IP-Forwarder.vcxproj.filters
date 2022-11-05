@@ -15,15 +15,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="GSv6Fwd.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="pcp.cpp">
+    <ClCompile Include="IP-Forwarder.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="GSv6Fwd.rc">
+    <ResourceCompile Include="IP-Forwarder.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
   </ItemGroup>
