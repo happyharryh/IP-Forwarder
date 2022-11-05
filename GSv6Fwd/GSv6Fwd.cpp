@@ -398,6 +398,13 @@ int StartUdpRelay(char* listenAddress, unsigned short listenPort, char* targetAd
         return WSAGetLastError();
     }
 
+    val = FALSE;
+    if (WSAIoctl(ipv6Socket, SIO_UDP_CONNRESET, &val, sizeof(val),
+                 NULL, 0, &bytesReturned, NULL, NULL) == SOCKET_ERROR) {
+        printf("WSAIoctl(SIO_UDP_CONNRESET, FALSE) failed: %d\n", WSAGetLastError());
+        return WSAGetLastError();
+    }
+
     // IPV6_PKTINFO is required to ensure that the destination IPv6 address matches the source that
     // we send our reply from. If we don't do this, traffic destined to addresses that aren't the default
     // outgoing NIC/address will get dropped by the remote party.
